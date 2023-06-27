@@ -40,7 +40,7 @@ const getSingleSeed = async (req, res)=> {
 
 const addNewSeed = async (req, res) => {
     const seed = {
-        seedPacket_id: req.body.seedPacket_id,
+        seedPacket_id:req.body.seedPacket_id,
         name: req.body.name,
         cultivar: req.body.cultivar,
         fTemp: req.body.fTemp,

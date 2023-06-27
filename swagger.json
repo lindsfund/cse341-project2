@@ -1,0 +1,127 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.1.0",
+    "title": "Contact REST API",
+    "description": "seed list"
+  },
+  "host": "linfundcse341.onrender.com",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/seeds/": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "seedPacket_id": {
+                  "example": "any"
+                },
+                "name": {
+                  "example": "any"
+                },
+                "cultivar": {
+                  "example": "any"
+                },
+                "fTemp": {
+                  "example": "any"
+                },
+                "plantDepth": {
+                  "example": "any"
+                },
+                "frstHardy": {
+                  "example": "any"
+                },
+                "hrsSunlight": {
+                  "example": "any"
+                },
+                "inSpaced": {
+                  "example": "any"
+                },
+                "dysToSprout": {
+                  "example": "any"
+                },
+                "category_id": {
+                  "example": "any"
+                },
+                "brand_id": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/seeds/{id}": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/apiDocs/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    }
+  }
+}

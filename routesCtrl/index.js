@@ -11,6 +11,6 @@ routes.get('/', (req, res) => {
 routes.use('/seeds',require('./seeds'));
 
 //get swagger info
-//routes.use('/apiDocs', require('./swagger'));
+routes.use('/apiDocs', require('./swagger'));
 
   module.exports = routes;
