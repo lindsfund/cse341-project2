@@ -21,7 +21,7 @@
         }
       }
     },
-    "/seeds/": {
+    "/seeds": {
       "get": {
         "description": "",
         "produces": [

@@ -1,0 +1,12 @@
+// LOCALHOST 
+### GET http://localhost:5050/seeds
+### GET http://localhost:5050/seeds/649b3c1d1add738f327ab0f5 
+
+//Render
+### GET https://cse341-gardenseeds.onrender.com/seeds
+### GET https://cse341-gardenseeds.onrender.com/seeds/649b3c1d1add738f327ab0f5
+
+//swagger
+### GET https://localhost:5050/apiDocs/
+
+
