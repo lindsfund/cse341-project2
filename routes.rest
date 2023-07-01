@@ -7,8 +7,8 @@ Content-Type: application/json
 
 
 {
-    "userName": "lindfund",
-    "password": "Test"
+    "userName": "PoisonIvy",
+    "password": "LateAtNight"
 }
 ###
 DELETE http://localhost:5050/users/64a0b48d78856490d35902e9
