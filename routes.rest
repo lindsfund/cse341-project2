@@ -1,6 +1,26 @@
-// LOCALHOST 
-### GET http://localhost:5050/seeds
-### GET http://localhost:5050/seeds/649b3c1d1add738f327ab0f5 
+ GET http://localhost:5050/users
+### 
+GET http://localhost:5050/users/64a0b48d78856490d35902e9
+###
+POST http://localhost:5050/users
+Content-Type: application/json
+
+
+{
+    "userName": "PoisonIvy",
+    "password": "LateAtNight"
+}
+###
+DELETE http://localhost:5050/users/64a0b48d78856490d35902e9
+
+###
+PATCH  http://localhost:5050/users/64a0b48d78856490d35902e9
+Content-Type: application/json
+
+
+{
+    "password": "ItWorks!"
+}
 
 //Render
 ### GET https://cse341-gardenseeds.onrender.com/seeds

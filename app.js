@@ -1,20 +1,18 @@
 const express = require('express');
-const mongodb = require('./db/connect');
-
-
 const app = express();
+const db = require('./db/connect');
+
+
+//port info
 const port = 5050;
 
+//let the app know about json use
+app.use(express.json());
 
-//use the files in the routesCtrl folder
-  app.use('/',require('./routesCtrl/index'));
-  
- mongodb.initDb((err)=>{
-    if(err) {
-        console.log(err);
-    } else {
-        app.listen(process.env.PORT || port, () => {
-            console.log(`listening on port ${port}`);
-          });
-    }
- })
+//create routes
+const userRouter = require('./routesCtrl/users');
+app.use('/users', userRouter);
+
+
+
+app.listen(port, () => console.log(`Server listening on ${port}`));
