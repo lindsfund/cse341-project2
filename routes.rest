@@ -1,6 +1,6 @@
  GET http://localhost:5050/users
 ### 
-GET http://localhost:5050/users/64a0aca910ec1385133026d9
+GET http://localhost:5050/users/64a0b48d78856490d35902e9
 ###
 POST http://localhost:5050/users
 Content-Type: application/json
@@ -9,6 +9,17 @@ Content-Type: application/json
 {
     "userName": "lindfund",
     "password": "Test"
+}
+###
+DELETE http://localhost:5050/users/64a0b48d78856490d35902e9
+
+###
+PATCH  http://localhost:5050/users/64a0b48d78856490d35902e9
+Content-Type: application/json
+
+
+{
+    "password": "ItWorks!"
 }
 
 //Render

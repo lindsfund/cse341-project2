@@ -7,7 +7,7 @@ const username = encodeURIComponent(process.env.DB_USERNAME);
 const password = encodeURIComponent(process.env.DB_PASSWORD);
 const cluster = process.env.DB_CLUSTER;
 
-mongoose.connect(`mongodb+srv://${username}:${password}@${cluster}`);  
+mongoose.connect(`mongodb+srv://${username}:${password}@${cluster}`,{dbName: 'gardenSeeds'});  
 const db = mongoose.connection;  
   //show connection error
   db.on('error', (error) => console.log(error));
