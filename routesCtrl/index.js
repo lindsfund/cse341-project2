@@ -8,7 +8,7 @@ routes.get('/', (req, res) => {
   });
 
 //get seeds info
-routes.use('/seeds',require('./seeds'));
+//routes.use('/seeds',require('./seeds'));
 
 //get swagger info
 routes.use('/apiDocs', require('./swagger'));
