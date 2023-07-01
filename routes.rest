@@ -1,3 +1,4 @@
+ //LOCALHOST TESTING
  GET http://localhost:5050/users
 ### 
 GET http://localhost:5050/users/64a0b48d78856490d35902e9
@@ -23,10 +24,13 @@ Content-Type: application/json
 }
 
 //Render
-### GET https://cse341-gardenseeds.onrender.com/seeds
-### GET https://cse341-gardenseeds.onrender.com/seeds/649b3c1d1add738f327ab0f5
+### 
+GET https://cse341-gardenseeds.onrender.com/users
+### 
+GET https://cse341-gardenseeds.onrender.com/users/64a0b6fff01d39095535324f
 
 //swagger
-### GET https://localhost:5050/apiDocs/
+### 
+GET https://localhost:5050/apiDocs/
 
 

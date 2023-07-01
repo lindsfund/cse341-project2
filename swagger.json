@@ -3,7 +3,7 @@
   "info": {
     "version": "1.1.0",
     "title": "Contact REST API",
-    "description": "seed list"
+    "description": "seed App"
   },
   "host": "linfundcse341.onrender.com",
   "basePath": "/",
@@ -17,19 +17,9 @@
         "responses": {
           "200": {
             "description": "OK"
-          }
-        }
-      }
-    },
-    "/seeds": {
-      "get": {
-        "description": "",
-        "produces": [
-          "application/json"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
@@ -42,37 +32,10 @@
             "schema": {
               "type": "object",
               "properties": {
-                "seedPacket_id": {
+                "userName": {
                   "example": "any"
                 },
-                "name": {
-                  "example": "any"
-                },
-                "cultivar": {
-                  "example": "any"
-                },
-                "fTemp": {
-                  "example": "any"
-                },
-                "plantDepth": {
-                  "example": "any"
-                },
-                "frstHardy": {
-                  "example": "any"
-                },
-                "hrsSunlight": {
-                  "example": "any"
-                },
-                "inSpaced": {
-                  "example": "any"
-                },
-                "dysToSprout": {
-                  "example": "any"
-                },
-                "category_id": {
-                  "example": "any"
-                },
-                "brand_id": {
+                "password": {
                   "example": "any"
                 }
               }
@@ -80,24 +43,18 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK"
-          },
           "201": {
             "description": "Created"
           },
-          "500": {
-            "description": "Internal Server Error"
+          "400": {
+            "description": "Bad Request"
           }
         }
       }
     },
-    "/seeds/{id}": {
+    "/{id}": {
       "get": {
         "description": "",
-        "produces": [
-          "application/json"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -109,16 +66,74 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
-      }
-    },
-    "/apiDocs/": {
-      "get": {
+      },
+      "patch": {
         "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "userName": {
+                  "example": "any"
+                },
+                "password": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }

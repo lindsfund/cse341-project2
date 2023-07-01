@@ -10,8 +10,14 @@ const port = 5050;
 app.use(express.json());
 
 //create routes
+const homeRouter = require('./routesCtrl/index');
+app.use('/', homeRouter);
+
 const userRouter = require('./routesCtrl/users');
 app.use('/users', userRouter);
+
+const swaggerRouter = require('./routesCtrl/swagger');
+app.use('/apiDocs', swaggerRouter);
 
 
 
