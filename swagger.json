@@ -5,13 +5,23 @@
     "title": "Contact REST API",
     "description": "seed App"
   },
-  "host": "https://cse341-gardenseeds.onrender.com",
+  "host": "cse341-gardenseeds.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"
   ],
   "paths": {
     "/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/users/": {
       "get": {
         "description": "",
         "responses": {
@@ -55,7 +65,7 @@
         }
       }
     },
-    "/{id}": {
+    "/users/{id}": {
       "get": {
         "description": "",
         "parameters": [
@@ -137,6 +147,16 @@
           },
           "500": {
             "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/apiDocs/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
           }
         }
       }
