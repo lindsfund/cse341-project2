@@ -7,7 +7,7 @@ const doc = {
         title: 'Contact REST API',        // by default: 'REST API'
         description: 'seed App',  // by default: ''
       },
-      host:'linfundcse341.onrender.com',
+      host:'https://cse341-gardenseeds.onrender.com',
       schemes: ['https'] 
     };
 
