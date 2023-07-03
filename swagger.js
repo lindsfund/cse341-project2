@@ -7,11 +7,11 @@ const doc = {
         title: 'Contact REST API',        // by default: 'REST API'
         description: 'seed App',  // by default: ''
       },
-      host:'https://cse341-gardenseeds.onrender.com',
+      host:'cse341-gardenseeds.onrender.com',
       schemes: ['https'] 
     };
 
 const outputFile = './swagger.json';
-const endpointsFiles = ['./routesCtrl/users.js'];
+const endpointsFiles = ['./routesCtrl/index.js'];
 
 swaggerAutogen(outputFile, endpointsFiles, doc);
