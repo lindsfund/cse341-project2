@@ -4,6 +4,7 @@ const db = require('./db/connect');
 const { query, matchedData, validationResult } = require('express-validator');
 
 
+
 //port info
 const port = 5050;
 
