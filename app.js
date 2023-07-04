@@ -1,15 +1,43 @@
 const express = require('express');
 const app = express();
-const db = require('./db/connect');
+const db = require('./db/connect'); 
+const dotenv = require('dotenv');
 const { query, matchedData, validationResult } = require('express-validator');
+const session = require('express-session');
 
 
 //port info
 const port = 5050;
 
+
 //let the app know about json use
 app.use(express.json());
 
+//load dotenv and passprt
+dotenv.config();
+require('./passport')(passport);
+
+//sessions middleware
+app.use(session({
+  secret: 'nopedy',
+  resave: false,
+  saveUninitialized: false,
+  //store
+}));
+
+//passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(passport.authenticate('session'));
+app.get('/auth/google',
+  passport.authenticate('google', { scope: ['profile'] }));
+
+app.get('/auth/google/callback', 
+  passport.authenticate('google', { failureRedirect: '/login' }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    res.redirect('/');
+  });
 
 //create routes
 const homeRouter = require('./routesCtrl/index');
@@ -31,5 +59,5 @@ app.get('/hello', query('person').notEmpty().escape(), (req, res) => {
   res.send({errors: result.array()});
 });
 
-
+db;
 app.listen(port, () => console.log(`Server listening on ${port}`));
